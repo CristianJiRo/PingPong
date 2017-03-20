@@ -37,8 +37,17 @@
             this.añadirJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.panelIzq = new System.Windows.Forms.Panel();
+            this.panelDer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lv_jug = new System.Windows.Forms.ListView();
+            this.lv_liga = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel.SuspendLayout();
+            this.panelIzq.SuspendLayout();
+            this.panelDer.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -109,26 +118,89 @@
             this.modificarJugadorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.modificarJugadorToolStripMenuItem.Text = "Modificar Jugador";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.62085F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.37915F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 351F));
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1227, 757);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.86634F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.13366F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
+            this.tableLayoutPanel.Controls.Add(this.panelIzq, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.panelDer, 1, 0);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 1;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1227, 757);
+            this.tableLayoutPanel.TabIndex = 1;
+            // 
+            // panelIzq
+            // 
+            this.panelIzq.Controls.Add(this.lv_jug);
+            this.panelIzq.Controls.Add(this.label1);
+            this.panelIzq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelIzq.Location = new System.Drawing.Point(3, 3);
+            this.panelIzq.Name = "panelIzq";
+            this.panelIzq.Size = new System.Drawing.Size(384, 751);
+            this.panelIzq.TabIndex = 0;
+            // 
+            // panelDer
+            // 
+            this.panelDer.Controls.Add(this.lv_liga);
+            this.panelDer.Controls.Add(this.label2);
+            this.panelDer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDer.Location = new System.Drawing.Point(393, 3);
+            this.panelDer.Name = "panelDer";
+            this.panelDer.Size = new System.Drawing.Size(831, 751);
+            this.panelDer.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Jugadores";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Liga";
+            // 
+            // lv_jug
+            // 
+            this.lv_jug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_jug.Location = new System.Drawing.Point(0, 31);
+            this.lv_jug.Name = "lv_jug";
+            this.lv_jug.Size = new System.Drawing.Size(384, 720);
+            this.lv_jug.TabIndex = 1;
+            this.lv_jug.UseCompatibleStateImageBehavior = false;
+            // 
+            // lv_liga
+            // 
+            this.lv_liga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_liga.Location = new System.Drawing.Point(0, 31);
+            this.lv_liga.Name = "lv_liga";
+            this.lv_liga.Size = new System.Drawing.Size(831, 720);
+            this.lv_liga.TabIndex = 1;
+            this.lv_liga.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 781);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -136,6 +208,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.panelIzq.ResumeLayout(false);
+            this.panelIzq.PerformLayout();
+            this.panelDer.ResumeLayout(false);
+            this.panelDer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +229,13 @@
         private System.Windows.Forms.ToolStripMenuItem añadirJugadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarJugadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarJugadorToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Panel panelIzq;
+        private System.Windows.Forms.Panel panelDer;
+        private System.Windows.Forms.ListView lv_jug;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lv_liga;
+        private System.Windows.Forms.Label label2;
     }
 }
 
