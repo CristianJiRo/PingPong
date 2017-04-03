@@ -10,7 +10,8 @@ namespace PingPong
     {
         String nombre;
         String urlFoto;
+        int puntos;
+        int jugados;
     }
-
     
 }

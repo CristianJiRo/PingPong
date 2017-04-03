@@ -52,6 +52,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddJugador.Designer.cs">
+      <DependentUpon>FormAddJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEliminarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEliminarJugador.Designer.cs">
+      <DependentUpon>formEliminarJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModificarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificarJugador.Designer.cs">
+      <DependentUpon>FormModificarJugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSigPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSigPartido.Designer.cs">
+      <DependentUpon>FormSigPartido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="Liga.cs" />
     <Compile Include="Partido.cs" />
@@ -59,6 +83,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddJugador.resx">
+      <DependentUpon>FormAddJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEliminarJugador.resx">
+      <DependentUpon>formEliminarJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificarJugador.resx">
+      <DependentUpon>FormModificarJugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSigPartido.resx">
+      <DependentUpon>FormSigPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +105,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Liga.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +118,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="User.ico" />
+    <Content Include="user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

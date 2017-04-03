@@ -8,7 +8,6 @@ namespace PingPong
 {
     class Liga
     {
-
         List<Partido> partidos;
     }
 }

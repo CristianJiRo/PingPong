@@ -1,4 +1,6 @@
-﻿namespace PingPong
+﻿//https://msdn.microsoft.com/en-us/library/y0wfd4yz(v=vs.110).aspx
+
+namespace PingPong
 {
     partial class Form1
     {
@@ -39,15 +41,22 @@
             this.modificarJugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panelIzq = new System.Windows.Forms.Panel();
-            this.panelDer = new System.Windows.Forms.Panel();
+            this.gvJugadores = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelCent = new System.Windows.Forms.Panel();
+            this.gvLiga = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.lv_jug = new System.Windows.Forms.ListView();
-            this.lv_liga = new System.Windows.Forms.ListView();
+            this.panelDer = new System.Windows.Forms.Panel();
+            this.gvPartidos = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.panelIzq.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvJugadores)).BeginInit();
+            this.panelCent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLiga)).BeginInit();
             this.panelDer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -58,7 +67,7 @@
             this.jugadoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1227, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,18 +86,21 @@
             this.iniciarLigaToolStripMenuItem.Name = "iniciarLigaToolStripMenuItem";
             this.iniciarLigaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.iniciarLigaToolStripMenuItem.Text = "Iniciar Liga";
+            this.iniciarLigaToolStripMenuItem.Click += new System.EventHandler(this.iniciarLigaToolStripMenuItem_Click);
             // 
             // eliminarLigaToolStripMenuItem
             // 
             this.eliminarLigaToolStripMenuItem.Name = "eliminarLigaToolStripMenuItem";
             this.eliminarLigaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.eliminarLigaToolStripMenuItem.Text = "Eliminar Liga";
+            this.eliminarLigaToolStripMenuItem.Click += new System.EventHandler(this.eliminarLigaToolStripMenuItem_Click);
             // 
             // siguientePartidoToolStripMenuItem
             // 
             this.siguientePartidoToolStripMenuItem.Name = "siguientePartidoToolStripMenuItem";
             this.siguientePartidoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.siguientePartidoToolStripMenuItem.Text = "Siguiente Partido";
+            this.siguientePartidoToolStripMenuItem.Click += new System.EventHandler(this.siguientePartidoToolStripMenuItem_Click);
             // 
             // jugadoresToolStripMenuItem
             // 
@@ -104,55 +116,59 @@
             // 
             this.añadirJugadorToolStripMenuItem.Name = "añadirJugadorToolStripMenuItem";
             this.añadirJugadorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.añadirJugadorToolStripMenuItem.Text = "Añadir Jugador";
+            this.añadirJugadorToolStripMenuItem.Text = "Anadir Jugador";
+            this.añadirJugadorToolStripMenuItem.Click += new System.EventHandler(this.anadirJugadorToolStripMenuItem_Click);
             // 
             // eliminarJugadorToolStripMenuItem
             // 
             this.eliminarJugadorToolStripMenuItem.Name = "eliminarJugadorToolStripMenuItem";
             this.eliminarJugadorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.eliminarJugadorToolStripMenuItem.Text = "Eliminar Jugador";
+            this.eliminarJugadorToolStripMenuItem.Click += new System.EventHandler(this.eliminarJugadorToolStripMenuItem_Click);
             // 
             // modificarJugadorToolStripMenuItem
             // 
             this.modificarJugadorToolStripMenuItem.Name = "modificarJugadorToolStripMenuItem";
             this.modificarJugadorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.modificarJugadorToolStripMenuItem.Text = "Modificar Jugador";
+            this.modificarJugadorToolStripMenuItem.Click += new System.EventHandler(this.modificarJugadorToolStripMenuItem_Click);
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.86634F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.13366F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.33735F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.66265F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 459F));
             this.tableLayoutPanel.Controls.Add(this.panelIzq, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.panelDer, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.panelCent, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.panelDer, 2, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1227, 757);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1234, 758);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // panelIzq
             // 
-            this.panelIzq.Controls.Add(this.lv_jug);
+            this.panelIzq.Controls.Add(this.gvJugadores);
             this.panelIzq.Controls.Add(this.label1);
             this.panelIzq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelIzq.Location = new System.Drawing.Point(3, 3);
             this.panelIzq.Name = "panelIzq";
-            this.panelIzq.Size = new System.Drawing.Size(384, 751);
+            this.panelIzq.Size = new System.Drawing.Size(337, 752);
             this.panelIzq.TabIndex = 0;
             // 
-            // panelDer
+            // gvJugadores
             // 
-            this.panelDer.Controls.Add(this.lv_liga);
-            this.panelDer.Controls.Add(this.label2);
-            this.panelDer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDer.Location = new System.Drawing.Point(393, 3);
-            this.panelDer.Name = "panelDer";
-            this.panelDer.Size = new System.Drawing.Size(831, 751);
-            this.panelDer.TabIndex = 1;
+            this.gvJugadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvJugadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvJugadores.Location = new System.Drawing.Point(0, 31);
+            this.gvJugadores.Name = "gvJugadores";
+            this.gvJugadores.Size = new System.Drawing.Size(337, 721);
+            this.gvJugadores.TabIndex = 1;
             // 
             // label1
             // 
@@ -166,6 +182,26 @@
             this.label1.Text = "Jugadores";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panelCent
+            // 
+            this.panelCent.Controls.Add(this.gvLiga);
+            this.panelCent.Controls.Add(this.label2);
+            this.panelCent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCent.Location = new System.Drawing.Point(346, 3);
+            this.panelCent.Name = "panelCent";
+            this.panelCent.Size = new System.Drawing.Size(425, 752);
+            this.panelCent.TabIndex = 1;
+            // 
+            // gvLiga
+            // 
+            this.gvLiga.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvLiga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvLiga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvLiga.Location = new System.Drawing.Point(0, 31);
+            this.gvLiga.Name = "gvLiga";
+            this.gvLiga.Size = new System.Drawing.Size(425, 721);
+            this.gvLiga.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -177,32 +213,46 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Liga";
             // 
-            // lv_jug
+            // panelDer
             // 
-            this.lv_jug.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lv_jug.Location = new System.Drawing.Point(0, 31);
-            this.lv_jug.Name = "lv_jug";
-            this.lv_jug.Size = new System.Drawing.Size(384, 720);
-            this.lv_jug.TabIndex = 1;
-            this.lv_jug.UseCompatibleStateImageBehavior = false;
+            this.panelDer.Controls.Add(this.gvPartidos);
+            this.panelDer.Controls.Add(this.label3);
+            this.panelDer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDer.Location = new System.Drawing.Point(777, 3);
+            this.panelDer.Name = "panelDer";
+            this.panelDer.Size = new System.Drawing.Size(454, 752);
+            this.panelDer.TabIndex = 2;
             // 
-            // lv_liga
+            // gvPartidos
             // 
-            this.lv_liga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lv_liga.Location = new System.Drawing.Point(0, 31);
-            this.lv_liga.Name = "lv_liga";
-            this.lv_liga.Size = new System.Drawing.Size(831, 720);
-            this.lv_liga.TabIndex = 1;
-            this.lv_liga.UseCompatibleStateImageBehavior = false;
+            this.gvPartidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPartidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvPartidos.Location = new System.Drawing.Point(0, 31);
+            this.gvPartidos.Name = "gvPartidos";
+            this.gvPartidos.Size = new System.Drawing.Size(454, 721);
+            this.gvPartidos.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 31);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Partidos";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 781);
+            this.ClientSize = new System.Drawing.Size(1234, 782);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1250, 820);
             this.Name = "Form1";
             this.Text = "Ping Pong";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -211,8 +261,13 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.panelIzq.ResumeLayout(false);
             this.panelIzq.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvJugadores)).EndInit();
+            this.panelCent.ResumeLayout(false);
+            this.panelCent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLiga)).EndInit();
             this.panelDer.ResumeLayout(false);
             this.panelDer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,11 +286,14 @@
         private System.Windows.Forms.ToolStripMenuItem modificarJugadorToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Panel panelIzq;
-        private System.Windows.Forms.Panel panelDer;
-        private System.Windows.Forms.ListView lv_jug;
+        private System.Windows.Forms.Panel panelCent;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView lv_liga;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelDer;
+        private System.Windows.Forms.DataGridView gvPartidos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView gvJugadores;
+        private System.Windows.Forms.DataGridView gvLiga;
     }
 }
 
