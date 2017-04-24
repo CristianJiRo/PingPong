@@ -49,6 +49,7 @@ namespace PingPong
             this.panelDer = new System.Windows.Forms.Panel();
             this.gvPartidos = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.panelIzq.SuspendLayout();
@@ -62,6 +63,7 @@ namespace PingPong
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ligaToolStripMenuItem,
             this.jugadoresToolStripMenuItem});
@@ -90,6 +92,7 @@ namespace PingPong
             // 
             // eliminarLigaToolStripMenuItem
             // 
+            this.eliminarLigaToolStripMenuItem.Enabled = false;
             this.eliminarLigaToolStripMenuItem.Name = "eliminarLigaToolStripMenuItem";
             this.eliminarLigaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.eliminarLigaToolStripMenuItem.Text = "Eliminar Liga";
@@ -97,6 +100,7 @@ namespace PingPong
             // 
             // siguientePartidoToolStripMenuItem
             // 
+            this.siguientePartidoToolStripMenuItem.Enabled = false;
             this.siguientePartidoToolStripMenuItem.Name = "siguientePartidoToolStripMenuItem";
             this.siguientePartidoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.siguientePartidoToolStripMenuItem.Text = "Siguiente Partido";
@@ -138,7 +142,7 @@ namespace PingPong
             this.tableLayoutPanel.ColumnCount = 3;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.33735F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.66265F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 459F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 462F));
             this.tableLayoutPanel.Controls.Add(this.panelIzq, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.panelCent, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.panelDer, 2, 0);
@@ -157,7 +161,7 @@ namespace PingPong
             this.panelIzq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelIzq.Location = new System.Drawing.Point(3, 3);
             this.panelIzq.Name = "panelIzq";
-            this.panelIzq.Size = new System.Drawing.Size(337, 752);
+            this.panelIzq.Size = new System.Drawing.Size(336, 752);
             this.panelIzq.TabIndex = 0;
             // 
             // gvJugadores
@@ -167,7 +171,7 @@ namespace PingPong
             this.gvJugadores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvJugadores.Location = new System.Drawing.Point(0, 31);
             this.gvJugadores.Name = "gvJugadores";
-            this.gvJugadores.Size = new System.Drawing.Size(337, 721);
+            this.gvJugadores.Size = new System.Drawing.Size(336, 721);
             this.gvJugadores.TabIndex = 1;
             // 
             // label1
@@ -187,9 +191,9 @@ namespace PingPong
             this.panelCent.Controls.Add(this.gvLiga);
             this.panelCent.Controls.Add(this.label2);
             this.panelCent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCent.Location = new System.Drawing.Point(346, 3);
+            this.panelCent.Location = new System.Drawing.Point(345, 3);
             this.panelCent.Name = "panelCent";
-            this.panelCent.Size = new System.Drawing.Size(425, 752);
+            this.panelCent.Size = new System.Drawing.Size(423, 752);
             this.panelCent.TabIndex = 1;
             // 
             // gvLiga
@@ -199,7 +203,7 @@ namespace PingPong
             this.gvLiga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvLiga.Location = new System.Drawing.Point(0, 31);
             this.gvLiga.Name = "gvLiga";
-            this.gvLiga.Size = new System.Drawing.Size(425, 721);
+            this.gvLiga.Size = new System.Drawing.Size(423, 721);
             this.gvLiga.TabIndex = 1;
             // 
             // label2
@@ -218,9 +222,9 @@ namespace PingPong
             this.panelDer.Controls.Add(this.gvPartidos);
             this.panelDer.Controls.Add(this.label3);
             this.panelDer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDer.Location = new System.Drawing.Point(777, 3);
+            this.panelDer.Location = new System.Drawing.Point(774, 3);
             this.panelDer.Name = "panelDer";
-            this.panelDer.Size = new System.Drawing.Size(454, 752);
+            this.panelDer.Size = new System.Drawing.Size(457, 752);
             this.panelDer.TabIndex = 2;
             // 
             // gvPartidos
@@ -230,7 +234,7 @@ namespace PingPong
             this.gvPartidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvPartidos.Location = new System.Drawing.Point(0, 31);
             this.gvPartidos.Name = "gvPartidos";
-            this.gvPartidos.Size = new System.Drawing.Size(454, 721);
+            this.gvPartidos.Size = new System.Drawing.Size(457, 721);
             this.gvPartidos.TabIndex = 1;
             // 
             // label3
@@ -244,15 +248,27 @@ namespace PingPong
             this.label3.TabIndex = 0;
             this.label3.Text = "Partidos";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1157, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(68, 19);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Actualizar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 782);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1250, 820);
+            this.MinimumSize = new System.Drawing.Size(1250, 818);
             this.Name = "Form1";
             this.Text = "Ping Pong";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -294,6 +310,7 @@ namespace PingPong
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gvJugadores;
         private System.Windows.Forms.DataGridView gvLiga;
+        private System.Windows.Forms.Button button2;
     }
 }
 

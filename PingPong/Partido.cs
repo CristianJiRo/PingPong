@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace PingPong
 {
-    class Partido
+    public class Partido
     {
-        Jugador jugador1;
-        Jugador jugador2;
+        public Jugador jugador1 { get; set; }
+        public Jugador jugador2 { get; set; }
 
-        int resJ1;
-        int resJ2;
+        public int resJ1 { get; set; }
+        public int resJ2 { get; set; }
+
+        public Partido (Jugador jug1, Jugador jug2)
+        {
+            this.jugador1 = jug1;
+            this.jugador2 = jug2;
+            this.resJ1 = 0;
+            this.resJ2 = 0;
+        }
         
+
     }
 }

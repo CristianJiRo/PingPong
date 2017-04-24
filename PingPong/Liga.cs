@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace PingPong
 {
-    class Liga
+    public class Liga
     {
-        List<Partido> partidos;
+        public List<Partido> partidos { get; set; }
+        public int jornada { get; set; }
+
+        public Liga(List<Partido> part)
+        {
+            this.partidos = part;
+            this.jornada = 0;
+        }
+
+
+        public int jornadasRestantes()
+        {
+            return partidos.Count - jornada;
+        }
     }
+
+   
 }
